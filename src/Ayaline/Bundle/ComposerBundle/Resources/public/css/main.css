@@ -198,12 +198,12 @@ p.drag-and-drop.focused {
     right: 10px;
 }
 
-.log-copy.zeroclipboard-is-hover {
+.log-copy.zeroclipboard-is-hover, #command-line button.zeroclipboard-is-hover {
     background-color: #ebebeb;
     border-color: #adadad;
 }
 
-.log-copy.zeroclipboard-is-active {
+.log-copy.zeroclipboard-is-active, #command-line button.zeroclipboard-is-active {
     background-color: #ebebeb;
     border-color: #adadad;
     outline: 0;

@@ -2,6 +2,9 @@ $(document).ready(function() {
     var dragDrop = $('p.drag-and-drop');
     var button = $('#progress button.btn-primary');
     var downloadLink = $('#download-link');
+    var commandLineContainer = $('#command-line');
+    var commandLineField = $('#command-line-field');
+
     $('input.file-chooser')
         .width(dragDrop.outerWidth())
         .height(dragDrop.outerHeight());
@@ -46,6 +49,8 @@ $(document).ready(function() {
         $('.tab-content button[data-target]').each(function() {
             clip.unglue(this);
         });
+        clip.unglue(commandLineContainer.find('button')[0]);
+        commandLineContainer.addClass('hide');
         $('form').submit();
     }
 
@@ -63,6 +68,11 @@ $(document).ready(function() {
 
         downloadLink.removeClass('hide');
         downloadLink.attr('href', data.link);
+
+        var command = location.protocol + '//' + location.hostname + (location.port && ':' + location.port) + data.link;
+        commandLineField.val(command);
+        commandLineContainer.removeClass('hide');
+        clip.glue(commandLineContainer.find('button')[0]);
     });
 
     channel.bind('consumer:new-step', function(data) {

@@ -53,7 +53,15 @@
                 </div>
                 <p></p>
                 <ul id="steps"></ul>
-                <p><a id="download-link" class="btn btn-lg btn-success fade in hide" href=""><i class="glyphicon glyphicon-download"></i> Download</a></p>
+                <p>
+                    <div class="input-group hide" id="command-line">
+                        <input type="text" class="form-control" id="command-line-field">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" data-clipboard-target="command-line-field"><i class="glyphicon glyphicon-floppy-save"></i></button>
+                        </span>
+                    </div>
+                </p>
+                <p><a id="download-link" class="btn btn-lg btn-success fade in hide" href=""><i class="glyphicon glyphicon-share"></i> Download</a></p>
             </div>
         </div>
     {{ form_end(form) }}
